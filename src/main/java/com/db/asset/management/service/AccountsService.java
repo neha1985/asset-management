@@ -56,7 +56,7 @@ public class AccountsService {
 		final Account accountTo = getAccount(transfer.getAccountToId());
 		final BigDecimal amount = transfer.getAmount();
 
-		transferValidator.validate(accountFrom, accountTo, transfer);
+		transferValidator.validate(accountFrom, accountTo);
 		boolean successful = false;
 		synchronized (accountFrom.getAccountId()) {
 			synchronized (accountTo.getAccountId()) {
